@@ -1,0 +1,70 @@
+personajes_mcu = [
+    {"nombre": "Tony Stark", "superheroe": "Iron Man", "genero": "M"},
+    {"nombre": "Steve Rogers", "superheroe": "Capitán América", "genero": "M"},
+    {"nombre": "Natasha Romanoff", "superheroe": "Black Widow", "genero": "F"},
+    {"nombre": "Carol Danvers", "superheroe": "Capitana Marvel", "genero": "F"},
+    {"nombre": "Scott Lang", "superheroe": "Ant-Man", "genero": "M"},
+    {"nombre": "Bruce Banner", "superheroe": "Hulk", "genero": "M"},
+    {"nombre": "Wanda Maximoff", "superheroe": "Scarlet Witch", "genero": "F"},
+    {"nombre": "Peter Parker", "superheroe": "Spider-Man", "genero": "M"},
+    {"nombre": "Thor Odinson", "superheroe": "Thor", "genero": "M"},
+]
+
+def nombre_personaje_capitana_marvel():
+    for personaje in personajes_mcu:
+        if personaje["superheroe"] == "Capitana Marvel":
+            return personaje["nombre"]
+    return None
+
+def mostrar_superheroes_femeninos():
+    for personaje in personajes_mcu:
+        if personaje["genero"] == "F":
+            print(personaje["superheroe"])
+
+def mostrar_personajes_masculinos():
+    for personaje in personajes_mcu:
+        if personaje["genero"] == "M":
+            print(personaje["nombre"])
+
+def nombre_superheroe_scott_lang():
+    for personaje in personajes_mcu:
+        if personaje["nombre"] == "Scott Lang":
+            return personaje["superheroe"]
+    return None
+
+def mostrar_datos_nombres_s():
+    for personaje in personajes_mcu:
+        if personaje["nombre"].startswith("S"):
+            print(personaje)
+
+def verificar_personaje_carol_danvers():
+    for personaje in personajes_mcu:
+        if personaje["nombre"] == "Carol Danvers":
+            return personaje["superheroe"]
+    return None
+
+# a. Determinar el nombre del personaje de la superhéroe Capitana Marvel
+print("a. Nombre del personaje de la superhéroe Capitana Marvel:")
+print(nombre_personaje_capitana_marvel())
+
+# b. Mostrar los nombres de los superhéroes femeninos
+print("\nb. Nombres de los superhéroes femeninos:")
+mostrar_superheroes_femeninos()
+
+# c. Mostrar los nombres de los personajes masculinos
+print("\nc. Nombres de los personajes masculinos:")
+mostrar_personajes_masculinos()
+
+# d. Determinar el nombre del superhéroe del personaje Scott Lang
+print("\nd. Nombre del superhéroe de Scott Lang:")
+print(nombre_superheroe_scott_lang())
+
+# e. Mostrar todos los datos de los superhéroes o personajes cuyos nombres comienzan con la letra S
+print("\ne. Datos de personajes cuyos nombres comienzan con S:")
+mostrar_datos_nombres_s()
+
+# f. Determinar si el personaje Carol Danvers se encuentra en la cola e indicar su nombre de superhéroe
+print("\nf. Superhéroe de Carol Danvers:")
+print(verificar_personaje_carol_danvers())
+
+per
