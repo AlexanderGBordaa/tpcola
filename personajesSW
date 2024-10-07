@@ -1,0 +1,55 @@
+personajes = [
+    {"nombre": "Luke Skywalker", "planeta": "Tatooine"},
+    {"nombre": "Han Solo", "planeta": "Corellia"},
+    {"nombre": "Leia Organa", "planeta": "Alderaan"},
+    {"nombre": "Yoda", "planeta": "Dagobah"},
+    {"nombre": "Jar Jar Binks", "planeta": "Naboo"},
+    {"nombre": "Chewbacca", "planeta": "Kashyyyk"},
+    {"nombre": "Obi-Wan Kenobi", "planeta": "Stewjon"},
+    {"nombre": "Palpatine", "planeta": "Naboo"},
+    {"nombre": "Rey", "planeta": "Jakku"},
+]
+
+def mostrar_personajes(planetas):
+    for personaje in personajes:
+        if personaje["planeta"] in planetas:
+            print(personaje)
+
+def planeta_natal(personajes_buscados):
+    for personaje in personajes:
+        if personaje["nombre"] in personajes_buscados:
+            print(f"{personaje['nombre']} es de {personaje['planeta']}")
+
+def insertar_personaje(nuevo_personaje, antes_de):
+    for i in range(len(personajes)):
+        if personajes[i]["nombre"] == antes_de:
+            personajes.insert(i, nuevo_personaje)
+            return
+    print(f"No se encontró a {antes_de} para insertar.")
+
+def eliminar_personaje_despues(de):
+    for i in range(len(personajes)):
+        if personajes[i]["nombre"] == de and i + 1 < len(personajes):
+            personajes.pop(i + 1)
+            return
+    print(f"No se encontró a {de} o no hay personaje después de él.")
+
+
+# a. Mostrar personajes de Alderaan, Endor y Tatooine
+print("Personajes de Alderaan, Endor y Tatooine:")
+mostrar_personajes(["Alderaan", "Endor", "Tatooine"])
+
+# b. Indicar el planeta natal de Luke Skywalker y Han Solo
+print("\nPlanetas natales de Luke Skywalker y Han Solo:")
+planeta_natal(["Luke Skywalker", "Han Solo"])
+
+# c. Insertar un nuevo personaje antes del maestro Yoda
+nuevo_personaje = {"nombre": "Ahsoka Tano", "planeta": "Shili"}
+insertar_personaje(nuevo_personaje, "Yoda")
+print("\nLista de personajes después de insertar a Ahsoka Tano:")
+print(personajes)
+
+# d. Eliminar el personaje ubicado después de Jar Jar Binks
+eliminar_personaje_despues("Jar Jar Binks")
+print("\nLista de personajes después de eliminar el personaje después de Jar Jar Binks:")
+print(personajes)
